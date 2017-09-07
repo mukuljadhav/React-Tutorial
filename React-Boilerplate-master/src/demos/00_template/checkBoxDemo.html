@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React - Component</title>
+    <script src="../../js/react.min.js"></script>
+    <script src="../../js/react-dom.min.js"></script>
+    <script src="../../js/browser.min.js"></script>
+</head>
+<body>
+
+<div id="container"></div>
+
+<script type="text/babel">
+
+    var CheckBoxComponent = React.createClass({
+        getInitialState:function () {
+            return {checked:true}
+        },
+
+        changeState : function () {
+                this.setState({checked:!this.state.checked});
+        },
+        render : function () {
+            var msg = "";
+            if(this.state.checked){
+                msg = 'Checked';
+            }
+            else msg = 'Unchecked';
+            return(
+                    <div>
+                        <input type="checkbox" onChange={this.changeState} checked={this.state.checked}/>
+                        <h2>CheckBox is : {msg}</h2>
+                    </div>
+            );
+        }
+    });
+
+    ReactDOM.render(<CheckBoxComponent/>,
+                    document.getElementById('container'));
+</script>
+
+</body>
+</html>

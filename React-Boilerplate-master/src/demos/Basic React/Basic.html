@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Stuff</title>
+    <script src="../../js/react.min.js"></script>
+    <script src="../../js/react-dom.min.js"></script>
+    <script src="../../js/browser.min.js"></script>
+</head>
+<body>
+<script type="text/babel">
+class Layout extends React.Component{
+    render(){
+        return(
+                <h1>{this.props.title}</h1>
+        );
+    }
+}
+
+ReactDOM.render(<Layout title="Hello Mukul" />, document.getElementById('app'));
+
+</script>
+<div id="app"></div>
+
+</body>
+</html>
